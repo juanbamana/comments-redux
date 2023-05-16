@@ -6,6 +6,7 @@ import { FormAddComment } from './components/FormAddComment'
 
 import store from './store'
 import { Provider } from 'react-redux'
+import { CommentList } from './components/CommentList'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Menu/>
     <Container className="mt-5">
       <h1 className="text-center">COMMENTS</h1>
+      <CommentList/>
     </Container>
     <Modal>
 <FormAddComment></FormAddComment>

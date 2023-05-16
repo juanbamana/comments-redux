@@ -1,22 +1,27 @@
-const initialProps ={
+const initialProps = {
 
     comments: []
 
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default function(state= initialProps, action) {
+export default function (state = initialProps, action) {
 
 
-    switch(action.type) {
+    switch (action.type) {
 
         case "ADD_COMMENT":
-            return{
+            return {
                 ...state,
-                comments:[...state.comments, action.payload] 
+                comments: [...state.comments, action.payload]
             };
 
-            default:
-                return state;
-}
+        case "DELETED_COMMENT":
+            return {
+                ...state,
+                comments: state.comments.filter(comment => comment.id !== action.payload)
+            };
+        default:
+            return state;
+    }
 }

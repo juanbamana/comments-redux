@@ -1,7 +1,7 @@
 import {Container} from 'react-bootstrap'
 import {Menu} from './components/Menu'
-
-
+import {Modal} from './components/Modal'
+import { FormAddComment } from './components/FormAddComment'
 // Redux
 
 import store from './store'
@@ -16,7 +16,9 @@ function App() {
     <Container className="mt-5">
       <h1 className="text-center">COMMENTS</h1>
     </Container>
-    
+    <Modal>
+<FormAddComment></FormAddComment>
+    </Modal>
     </Provider>
 
   );

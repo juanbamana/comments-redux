@@ -1,10 +1,24 @@
 import React from 'react'
 import { Container, Navbar, Button } from 'react-bootstrap'
 import  Logo  from '../img/redux.png'
+import { useDispatch } from 'react-redux'
+import {openCloseCommentModalAction} from '../actions/modalsActions'
+
 
 
 
 export const Menu = () => {
+
+    const dispatch = useDispatch()
+
+    const actionModal = state => dispatch(openCloseCommentModalAction(state))
+
+    const openModal= () =>{
+
+      actionModal(true)
+    }
+
+
   return (
 
     <Navbar bg="dark" variant='dark'>
@@ -23,7 +37,7 @@ export const Menu = () => {
           Comments Simulator Redux
         </Navbar.Brand>
 
-        <Button variant='outline-success'>New Comment</Button>
+        <Button onClick={openModal} variant='outline-success'>New Comment</Button>
 
       </Container>
 
